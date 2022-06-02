@@ -1,6 +1,8 @@
 # vaga
-
-## Project setup
+```
+Projeto feito com vue cli
+```
+## Intalar dependencias
 ```
 npm install
 ```
