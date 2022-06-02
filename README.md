@@ -7,7 +7,7 @@ Projeto feito com vue cli
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Rodar o projeto
 ```
 npm run serve
 ```
