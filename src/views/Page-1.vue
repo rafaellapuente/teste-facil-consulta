@@ -52,7 +52,11 @@
           <label class="label-type2">
             <label class="area-select">
               Estado*
-              <select v-model="estado" class="select1" :class="{ border: errorEsta }">
+              <select
+                v-model="estado"
+                class="select1"
+                :class="{ border: errorEsta }"
+              >
                 <option disabled value="dis">Selecione</option>
                 <option v-for="i in itemsEstado" :key="i.id" :value="i.id">
                   {{ i.nome }}
@@ -62,7 +66,11 @@
             </label>
             <label class="area-select">
               Cidade*
-              <select v-model="cidade" class="select2" :class="{ border: errorCida }">
+              <select
+                v-model="cidade"
+                class="select2"
+                :class="{ border: errorCida }"
+              >
                 <option disabled value="dis">Selecione</option>
                 <option v-for="i in itemsCidade" :key="i.id" :value="i.nome">
                   {{ i.nome }}
@@ -173,7 +181,16 @@ export default {
       } else if (!valiCida) {
         let erro = "Selecione uma cidade.";
         this.errorCida = erro;
-      } else {
+      }
+      let verifi =
+        this.errorName === "" &&
+        this.errorCpf === "" &&
+        this.errorTel === "" &&
+        this.errorEsta === "" &&
+        this.errorCida === ""
+          ? true
+          : false;
+      if (verifi) {
         this.$store.commit("saveNome", this.nome);
         this.$store.commit("saveCpf", this.cpf);
         this.$store.commit("saveNumero", this.tel);
